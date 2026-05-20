@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Lenis handles smooth scroll — disable native */
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #FAFAFA;
+    font-family: 'Inter', 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Hide system cursor on desktop — CustomCursor takes over */
+  @media (min-width: 1024px) {
+    body, a, button, [data-cursor-hover] {
+      cursor: none !important;
+    }
+  }
+
+  ::selection {
+    background-color: #D4F87A;
+    color: #0A0A0A;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .animate-marquee {
+      animation: none !important;
+    }
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .hairline {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 60px rgba(201, 169, 110, 0.35), 0 0 120px rgba(201, 169, 110, 0.15);
+  }
+
+  .lime-glow {
+    text-shadow: 0 0 30px rgba(212, 248, 122, 0.4);
+  }
+
+  /* Project card hover glow */
+  .card-hover-glow {
+    transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-hover-glow:hover {
+    box-shadow: 0 20px 40px rgba(212, 248, 122, 0.07);
+    border-color: rgba(212, 248, 122, 0.4);
+  }
+}
+
+@layer utilities {
+  .clip-reveal {
+    clip-path: inset(0 100% 0 0);
+  }
+  .clip-visible {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+/* Marquee — seamless: two identical spans, translateX 0 → -50% */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
