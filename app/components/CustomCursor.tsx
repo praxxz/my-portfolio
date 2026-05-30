@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false)
-  const [isMobile, setIsMobile] = useState(true) // default true (SSR safe)
+  const [isMobile, setIsMobile] = useState(true)
   const isHoveringRef = useRef(false)
 
   const cursorX = useMotionValue(-100)
@@ -16,11 +16,9 @@ export default function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig)
 
   useEffect(() => {
-    // Check device — hide cursor on touch/mobile
     setIsMobile(window.innerWidth < 1024 || 'ontouchstart' in window)
     if (window.innerWidth < 1024 || 'ontouchstart' in window) return
 
-    // Hide system cursor
     document.body.style.cursor = 'none'
 
     const moveCursor = (e: MouseEvent) => {

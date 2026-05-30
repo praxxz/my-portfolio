@@ -8,7 +8,6 @@ import Footer from './sections/Footer'
 export default function Home() {
   return (
     <main className="relative">
-      {/* id="home" on a wrapper so footer "Home" nav link works */}
       <div id="home">
         <Hero />
       </div>

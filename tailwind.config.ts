@@ -18,10 +18,10 @@ const config: Config = {
         cream: '#F5E8D3',
       },
       fontFamily: {
-        display: ['Oswald', 'Bebas Neue', 'sans-serif'],
-        body: ['Inter', 'DM Sans', 'sans-serif'],
-        serif: ['Cormorant Garamond', 'Playfair Display', 'serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        display: ['var(--font-oswald)', 'Bebas Neue', 'sans-serif'],
+        body: ['var(--font-inter)', 'DM Sans', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Playfair Display', 'serif'],
+        mono: ['var(--font-jetbrains)', 'Fira Code', 'monospace'],
       },
       letterSpacing: {
         'widest': '0.18em',

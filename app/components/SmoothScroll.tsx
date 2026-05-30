@@ -12,13 +12,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 0, // native scroll on mobile
+      touchMultiplier: 0,
     })
 
     lenisRef.current = lenis
 
-    // Sync Lenis with Framer Motion's useScroll
-    // by dispatching a scroll event on each Lenis tick
     lenis.on('scroll', () => {
       window.dispatchEvent(new Event('scroll', { bubbles: false }))
     })

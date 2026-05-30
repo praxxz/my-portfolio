@@ -38,7 +38,6 @@ function CertCard({ cert, index }: { cert: typeof certifications[0]; index: numb
       }}
       className="group relative p-5 md:p-6 rounded-xl border border-white/[0.10] bg-white/[0.02] hover:border-lime/30 transition-all duration-300"
     >
-      {/* Left border accent on hover */}
       <div className="absolute left-0 top-4 bottom-4 w-[2px] bg-lime scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top rounded-full" />
 
       <div className="flex items-start gap-3">
@@ -66,7 +65,6 @@ export default function Experience() {
   return (
     <section id="experience" className="relative bg-void py-24 md:py-32 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        {/* Section Heading */}
         <div ref={headingRef} className="flex items-center gap-6 mb-16 md:mb-24">
           <div className="flex-1 hairline" />
           <motion.h2
@@ -74,16 +72,14 @@ export default function Experience() {
             animate={isHeadingInView ? { opacity: 1, clipPath: "inset(0 0% 0 0)" } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[48px] md:text-[72px] lg:text-[88px] font-display font-bold tracking-[0.02em] text-kimono whitespace-nowrap"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
+            style={{ fontFamily: "var(--font-oswald)" }}
           >
             EXPERIENCE
           </motion.h2>
           <div className="flex-1 hairline" />
         </div>
 
-        {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left - Experience */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <Briefcase className="w-5 h-5 text-lime" strokeWidth={1.5} />
@@ -122,7 +118,6 @@ export default function Experience() {
             </motion.div>
           </div>
 
-          {/* Right - Certifications */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <Award className="w-5 h-5 text-lime" strokeWidth={1.5} />

@@ -12,7 +12,6 @@ const navLinks = [
 function smoothScrollTo(id: string) {
   const el = document.getElementById(id)
   if (!el) return
-  // Works with both Lenis and native scroll
   el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
@@ -20,10 +19,8 @@ export default function Footer() {
   return (
     <footer className="relative bg-void border-t border-white/[0.08] py-10 md:py-12 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
 
-          {/* Left — Wordmark, click scrolls to top */}
           <button
             onClick={() => smoothScrollTo('home')}
             className="flex items-center gap-2 group cursor-pointer"
@@ -35,7 +32,6 @@ export default function Footer() {
             </span>
           </button>
 
-          {/* Center — Nav links */}
           <nav className="flex items-center gap-6 md:gap-8" aria-label="Footer navigation">
             {navLinks.map((link) => (
               <button
@@ -44,13 +40,11 @@ export default function Footer() {
                 className="text-[11px] tracking-[0.15em] uppercase text-warmgray hover:text-lime transition-colors duration-300 relative group cursor-pointer"
               >
                 {link.label}
-                {/* Underline draw-on-hover */}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-lime group-hover:w-full transition-all duration-300" />
               </button>
             ))}
           </nav>
 
-          {/* Right — Social Icons */}
           <div className="flex items-center gap-4">
             <a
               href="https://github.com/praxxz"
@@ -60,7 +54,7 @@ export default function Footer() {
               aria-label="GitHub profile"
               className="w-9 h-9 rounded-full glass-panel flex items-center justify-center text-warmgray hover:text-lime hover:border-lime/30 transition-all duration-300 group"
             >
-              <Github className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+               <Github className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
             </a>
             <a
               href="https://linkedin.com/in/prathamesh-tikone"
@@ -75,10 +69,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Hairline */}
         <div className="hairline mb-6" />
 
-        {/* Bottom Line */}
         <div className="text-center">
           <p className="text-[11px] text-warmgray/60 tracking-wide">
             Built with MERN Stack • Designed with intention • Thane, Maharashtra

@@ -44,7 +44,6 @@ function SkillNode({ skill, index }: { skill: typeof skills[0]; index: number })
       }}
       className="relative flex items-start gap-6 group"
     >
-      {/* Node dot */}
       <div className="relative flex flex-col items-center">
         <div className="w-3 h-3 rounded-full bg-lime shadow-[0_0_12px_rgba(212,248,122,0.4)] z-10" />
         {index < skills.length - 1 && (
@@ -52,7 +51,6 @@ function SkillNode({ skill, index }: { skill: typeof skills[0]; index: number })
         )}
       </div>
 
-      {/* Content */}
       <div className="pb-8">
         <div className="flex items-center gap-3 mb-2">
           <Icon 
@@ -84,7 +82,6 @@ export default function About() {
 
   return (
     <section id="about" className="relative bg-void py-24 md:py-32 px-6 md:px-12 lg:px-20">
-      {/* Section Heading with hairline rules */}
       <div ref={headingRef} className="flex items-center gap-6 mb-20 md:mb-28">
         <div className="flex-1 hairline" />
         <motion.h2
@@ -92,16 +89,14 @@ export default function About() {
           animate={isHeadingInView ? { opacity: 1, clipPath: "inset(0 0% 0 0)" } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-[48px] md:text-[72px] lg:text-[88px] font-display font-bold tracking-[0.02em] text-kimono whitespace-nowrap"
-          style={{ fontFamily: "'Oswald', sans-serif" }}
+          style={{ fontFamily: "var(--font-oswald)" }}
         >
           ABOUT ME
         </motion.h2>
         <div className="flex-1 hairline" />
       </div>
 
-      {/* Two Column Layout */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-        {/* Left Column - Text */}
         <div className="space-y-8">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -127,10 +122,8 @@ export default function About() {
           </motion.p>
         </div>
 
-        {/* Right Column - Skills Timeline */}
         <div className="lg:pl-8">
           <div className="relative">
-            {/* Vertical hairline */}
             <div className="absolute left-[5px] top-1.5 bottom-0 w-px bg-white/10" />
 
             <div className="space-y-2">

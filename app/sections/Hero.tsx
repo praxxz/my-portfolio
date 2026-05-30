@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 import {
   Github,
   Linkedin,
@@ -29,54 +30,42 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-screen bg-charcoal overflow-hidden"
     >
-      {/* Marquee */}
       <div className="relative z-50">
         <Marquee />
       </div>
 
-      {/* Background Layer */}
       <motion.div
         style={{ y: bgY, willChange: 'transform' }}
         className="absolute inset-0 z-10 pointer-events-none"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-[#151210] to-black" />
 
-        {/* Ambient Glow */}
         <div className="absolute top-0 left-0 w-[60%] h-[60%] bg-gradient-radial from-white/[0.03] to-transparent blur-3xl" />
 
         <div className="absolute top-[10%] left-[15%] w-[30%] h-[40%] bg-champagne/[0.03] blur-[120px] rounded-full" />
 
-        {/* Noise Texture */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/noise.png')]" />
       </motion.div>
 
-      {/* Decorative Tech Elements */}
       <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
 
-        {/* Top Right Grid */}
         <div className="absolute top-[12%] right-[10%] opacity-30">
           <div className="w-[140px] h-[140px] border border-champagne/[0.06] rotate-45" />
         </div>
 
-        {/* Floating Accent */}
         <div className="absolute top-[28%] left-[22%] text-champagne/60 text-xl">
           ✦
         </div>
 
-        {/* Tiny Glow Dot */}
         <div className="absolute top-[22%] right-[24%] w-1.5 h-1.5 rounded-full bg-champagne/60 blur-[1px]" />
 
-        {/* Center Glow Line */}
         <div className="absolute bottom-[18%] left-1/2 -translate-x-1/2 w-[220px] h-[1px] bg-gradient-to-r from-transparent via-champagne/60 to-transparent blur-[1px]" />
 
-        {/* Left Glow */}
         <div className="absolute bottom-[22%] left-[18%] w-[6px] h-[6px] rounded-full bg-champagne blur-[3px]" />
 
-        {/* Right Glow */}
         <div className="absolute bottom-[26%] right-[18%] w-[6px] h-[6px] rounded-full bg-champagne blur-[3px]" />
       </div>
 
-      {/* CREATIVE TEXT */}
       <motion.div
         style={{ y: creativeY, willChange: 'transform' }}
         className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none select-none"
@@ -84,7 +73,7 @@ export default function Hero() {
         <h1
           className="font-display text-[24vw] md:text-[22vw] font-bold leading-none tracking-tight text-champagne/80"
           style={{
-            fontFamily: "'Oswald', sans-serif",
+            fontFamily: "var(--font-oswald)",
             fontWeight: 700,
             letterSpacing: '-0.03em',
             textShadow: '0 0 40px rgba(212,175,55,0.18)',
@@ -94,7 +83,6 @@ export default function Hero() {
         </h1>
       </motion.div>
 
-      {/* PHOTO SECTION */}
       <motion.div
         style={{ y: photoY, willChange: 'transform' }}
         className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none"
@@ -109,54 +97,45 @@ export default function Hero() {
           }}
           className="relative mt-12"
         >
-          {/* Cinematic Glow + Rings */}
           <div className="absolute inset-0 flex items-center justify-center -z-10">
 
-            {/* Main Glow */}
             <div className="w-[420px] h-[420px] md:w-[580px] md:h-[580px] rounded-full bg-champagne/[0.14] blur-[120px]" />
 
-            {/* Ring 1 */}
             <div className="absolute w-[520px] h-[520px] md:w-[720px] md:h-[720px] rounded-full border border-champagne/[0.08]" />
 
-            {/* Ring 2 */}
             <div className="absolute w-[640px] h-[640px] md:w-[860px] md:h-[860px] rounded-full border border-champagne/[0.04]" />
 
-            {/* Floating Particles */}
             <div className="absolute top-[18%] left-[28%] w-1 h-1 rounded-full bg-champagne/70 blur-[1px]" />
             <div className="absolute top-[26%] right-[30%] w-1.5 h-1.5 rounded-full bg-champagne/50 blur-[1px]" />
             <div className="absolute bottom-[22%] left-[25%] w-1 h-1 rounded-full bg-champagne/50 blur-[1px]" />
             <div className="absolute bottom-[28%] right-[24%] w-1 h-1 rounded-full bg-champagne/40 blur-[1px]" />
           </div>
 
-          {/* PHOTO */}
           <div className="relative w-[300px] sm:w-[360px] md:w-[520px] lg:w-[620px] aspect-[3/4]">
 
-            <img
+            <Image
               src="/images/photo.png"
               alt="Prathamesh Tikone"
+              fill
+              priority
               className="absolute inset-0 w-full h-full object-cover object-top drop-shadow-[0_0_45px_rgba(212,175,55,0.18)]"
             />
 
-            {/* Bottom Fade */}
             <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent" />
           </div>
         </motion.div>
       </motion.div>
 
-      {/* UI CONTENT */}
       <div className="relative z-50 min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-20 pt-8 pb-12 pointer-events-none">
 
-        {/* TOP ROW */}
         <div className="flex justify-between items-start pointer-events-auto">
 
-          {/* LEFT */}
           <div className="flex flex-col">
 
             <h2 className="text-[13px] tracking-[0.18em] uppercase text-kimono font-body font-medium">
               PRATHAMESH TIKONE
             </h2>
 
-            {/* DOWNLOAD RESUME BUTTON */}
             <a
               href="https://drive.google.com/file/d/1PL-VVRYEoAOwCbs8u5zJVvG59V582iAc/view?usp=drivesdk"
               target="_blank"
@@ -173,7 +152,6 @@ export default function Hero() {
               </span>
             </a>
 
-            {/* GitHub text */}
             <div className="flex items-center gap-2 mt-5">
               <Code2
                 className="w-3.5 h-3.5 text-warmgray"
@@ -186,7 +164,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="text-right hidden md:block">
             <p className="font-serif text-[18px] md:text-[22px] text-kimono/85 italic leading-relaxed">
               Code that ships.
@@ -198,16 +175,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Spacer */}
         <div className="flex-1" />
 
-        {/* BOTTOM ROW */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 pointer-events-auto">
 
-          {/* SOCIALS */}
           <div className="flex gap-3">
 
-            {/* GITHUB */}
             <a
               href="https://github.com/praxxz"
               target="_blank"
@@ -219,13 +192,11 @@ export default function Hero() {
                 strokeWidth={1.5}
               />
 
-              {/* Desktop Text */}
               <span className="hidden sm:inline text-[11px] tracking-[0.1em] uppercase text-warmgray group-hover:text-kimono font-mono transition-colors">
                 github.com/praxxz
               </span>
             </a>
 
-            {/* LINKEDIN */}
             <a
               href="https://linkedin.com/in/prathamesh-tikone"
               target="_blank"
@@ -237,14 +208,12 @@ export default function Hero() {
                 strokeWidth={1.5}
               />
 
-              {/* Desktop Text */}
               <span className="hidden sm:inline text-[11px] tracking-[0.1em] uppercase text-warmgray group-hover:text-kimono font-mono transition-colors">
                 linkedin.com/in/prathamesh-tikone
               </span>
             </a>
           </div>
 
-          {/* TITLE */}
           <motion.div
             style={{ y: titleY, willChange: 'transform' }}
             initial={{ opacity: 0, x: 30 }}
@@ -259,7 +228,7 @@ export default function Hero() {
             <h3
               className="text-[34px] md:text-[52px] font-display font-bold tracking-[0.04em] text-kimono leading-none"
               style={{
-                fontFamily: "'Oswald', sans-serif",
+                fontFamily: "var(--font-oswald)",
                 textShadow: '0 0 20px rgba(255,255,255,0.06)',
               }}
             >
@@ -273,7 +242,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* BIO STRIP */}
       <div className="relative z-50 bg-charcoal border-t border-white/[0.06] py-12 md:py-16 px-6">
 
         <motion.p

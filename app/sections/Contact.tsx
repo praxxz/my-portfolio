@@ -28,7 +28,6 @@ export default function Contact() {
   }
 
   function handleSend() {
-    // Basic validation
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setStatus('error')
       setTimeout(() => setStatus('idle'), 3000)
@@ -37,19 +36,16 @@ export default function Contact() {
 
     setStatus('sending')
 
-    // Opens the user's default email client with pre-filled fields
     const subject = encodeURIComponent(`Portfolio Enquiry from ${form.name}`)
     const body = encodeURIComponent(
       `Hi Prathamesh,\n\n${form.message}\n\n---\nFrom: ${form.name}\nEmail: ${form.email}`
     )
     const mailtoLink = `mailto:prathameshtikone655@gmail.com?subject=${subject}&body=${body}`
 
-    // Small delay for the "sending" animation to feel real
     setTimeout(() => {
       window.location.href = mailtoLink
       setStatus('sent')
       setForm({ name: '', email: '', message: '' })
-      // Reset back to idle after 4 seconds
       setTimeout(() => setStatus('idle'), 4000)
     }, 600)
   }
@@ -57,7 +53,6 @@ export default function Contact() {
   return (
     <section id="contact" className="relative bg-void py-24 md:py-32 px-6 md:px-12 lg:px-20 overflow-hidden">
 
-      {/* Atmospheric Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-void via-[#0d0d0d] to-void" />
         <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-champagne/[0.03] blur-[120px] rounded-full" />
@@ -73,7 +68,6 @@ export default function Contact() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
-        {/* Section Heading */}
         <div ref={headingRef} className="flex items-center gap-6 mb-16 md:mb-24">
           <div className="flex-1 hairline" />
           <motion.h2
@@ -81,7 +75,7 @@ export default function Contact() {
             animate={isHeadingInView ? { opacity: 1, clipPath: "inset(0 0% 0 0)" } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-[48px] md:text-[72px] lg:text-[88px] font-display font-bold tracking-[0.02em] text-kimono whitespace-nowrap"
-            style={{ fontFamily: "'Oswald', sans-serif" }}
+            style={{ fontFamily: "var(--font-oswald)" }}
           >
             CONTACT
           </motion.h2>
@@ -90,7 +84,6 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* Left — Form */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +101,6 @@ export default function Contact() {
 
             <div className="space-y-8">
 
-              {/* Name */}
               <div className="relative">
                 <input
                   type="text"
@@ -126,7 +118,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Email */}
               <div className="relative">
                 <input
                   type="email"
@@ -144,7 +135,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Message */}
               <div className="relative">
                 <textarea
                   placeholder="Your message"
@@ -162,7 +152,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Validation error */}
               {status === 'error' && (
                 <motion.p
                   initial={{ opacity: 0, y: -8 }}
@@ -173,7 +162,6 @@ export default function Contact() {
                 </motion.p>
               )}
 
-              {/* Send Button */}
               <motion.button
                 onClick={handleSend}
                 disabled={status === 'sending' || status === 'sent'}
@@ -210,14 +198,12 @@ export default function Contact() {
                 )}
               </motion.button>
 
-              {/* Helper note */}
               <p className="text-[11px] text-warmgray/40 text-center font-mono tracking-wide -mt-4">
                 Opens your default mail app with the message pre-filled
               </p>
             </div>
           </motion.div>
 
-          {/* Right — Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

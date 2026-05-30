@@ -10,7 +10,6 @@ export default function Marquee() {
     "TUTOR & MENTOR",
   ]
 
-  // Join once — CSS animation handles the loop by duplicating the DOM node
   const content = services.join("  •  ") + "  •  "
 
   return (
@@ -25,7 +24,6 @@ export default function Marquee() {
         if (el) el.style.animationPlayState = 'running'
       }}
     >
-      {/* Two identical spans — animation moves from 0 to -50% creating a seamless loop */}
       <div className="marquee-track flex whitespace-nowrap animate-marquee">
         <span className="text-[11px] tracking-[0.18em] uppercase text-warmgray font-body shrink-0">
           {content}

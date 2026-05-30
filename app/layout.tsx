@@ -1,7 +1,33 @@
 import type { Metadata } from 'next'
+import { Inter, Oswald, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import SmoothScroll from './components/SmoothScroll'
 import CustomCursor from './components/CustomCursor'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  variable: '--font-oswald',
+  display: 'swap',
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Prathamesh Tikone — Developer & Builder',
@@ -16,11 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
+    <html lang="en" className={`${inter.variable} ${oswald.variable} ${cormorant.variable} ${jetbrains.variable}`}>
       <body className="antialiased">
         <SmoothScroll>
           <CustomCursor />

@@ -61,7 +61,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       className="group relative glass-panel card-hover-glow rounded-2xl p-6 md:p-8"
       style={{ willChange: "transform" }}
     >
-      {/* Hover glow — unique colour per project */}
       <motion.div
         className="absolute -inset-px rounded-2xl pointer-events-none"
         initial={{ opacity: 0 }}
@@ -71,7 +70,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       />
 
       <div className="relative z-10">
-        {/* Category & Icon */}
         <div className="flex items-center justify-between mb-6">
           <span className="text-[11px] tracking-[0.15em] uppercase text-lime font-mono">
             {project.category}
@@ -87,17 +85,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </motion.div>
         </div>
 
-        {/* Title */}
         <h3 className="text-[24px] md:text-[28px] font-body font-bold text-kimono mb-4 tracking-tight">
           {project.title}
         </h3>
 
-        {/* Description */}
         <p className="text-[14px] text-warmgray leading-[1.7] mb-6">
           {project.description}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.map((tag) => (
             <span
@@ -109,7 +104,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           ))}
         </div>
 
-        {/* Link */}
         <a
           href={project.link}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-void text-[12px] tracking-[0.1em] uppercase font-medium hover:bg-lime transition-colors duration-300 group/link opacity-70 group-hover:opacity-100"
@@ -128,21 +122,19 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative bg-void py-24 md:py-32 px-6 md:px-12 lg:px-20">
-      {/* Section Heading */}
       <div ref={headingRef} className="flex items-center gap-6 mb-16 md:mb-24">
         <motion.h2
           initial={{ opacity: 0, clipPath: "inset(0 100% 0 0)" }}
           animate={isHeadingInView ? { opacity: 1, clipPath: "inset(0 0% 0 0)" } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-[48px] md:text-[72px] lg:text-[88px] font-display font-bold tracking-[0.02em] text-kimono whitespace-nowrap"
-          style={{ fontFamily: "'Oswald', sans-serif" }}
+          style={{ fontFamily: "var(--font-oswald)" }}
         >
           PROJECTS
         </motion.h2>
         <div className="flex-1 hairline" />
       </div>
 
-      {/* Bento Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <ProjectCard key={project.title} project={project} index={index} />
