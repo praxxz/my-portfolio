@@ -40,20 +40,6 @@ Dark luxury fashion editorial meets brutalist creative agency homepage meets qui
 | Warm Gray | #888580 | Body copy, captions |
 | Cream | #F5E8D3 | CTA button background |
 
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## Build for Production
-
-```bash
-npm run build
-```
 
 ## Photo Placeholder
 
