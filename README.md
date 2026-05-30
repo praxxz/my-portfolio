@@ -1,59 +1,157 @@
-# Prathamesh Tikone — Portfolio
+# ⚡ Prathamesh Developer Portfolio
 
-A refined, cinematic, editorial portfolio website for Prathamesh Tikone — a Computer Engineering student, Full-Stack Web & App Developer, and AI-based product builder from Thane, Maharashtra.
-
-## Aesthetic
-
-Dark luxury fashion editorial meets brutalist creative agency homepage meets quiet developer precision. Zero generic portfolio energy.
-
-## Tech Stack
-
-- **Next.js 14** (App Router, TypeScript)
-- **Tailwind CSS** (custom design system)
-- **Framer Motion** (scroll animations, hover states, parallax)
-- **Lenis** (@studio-freight/lenis) for smooth scroll
-- **Lucide React** (icons)
-- **Google Fonts** (Oswald, Inter, Cormorant Garamond, JetBrains Mono)
-
-## Features
-
-- Full-bleed cinematic hero with z-index layered "CREATIVE" typography
-- Infinite marquee ticker strip
-- Parallax scroll effects
-- Glassmorphism project cards with hover lift & glow
-- Vertical skills timeline with staggered scroll reveal
-- Lime-yellow accent system (#D4F87A)
-- Custom cursor (dot → outlined circle on interactive elements)
-- Clip-path heading reveals
-- Responsive bento grid
-- Frosted-glass contact form
-
-## Color Palette
-
-| Token | Hex | Usage |
-|-------|-----|-------|
-| Void Black | #0A0A0A | Primary background |
-| Charcoal | #0D0C0B | Hero background |
-| Champagne Gold | #C9A96E | Hero display type |
-| Kimono White | #FAFAFA | Primary text |
-| Lime Accent | #D4F87A | Emphasis, hover, focus |
-| Warm Gray | #888580 | Body copy, captions |
-| Cream | #F5E8D3 | CTA button background |
-
-
-## Photo Placeholder
-
-The hero section includes a placeholder silhouette. Replace the photo in `app/sections/Hero.tsx` by swapping the placeholder `div` with an actual `<Image>` component pointing to your photo in `/public/images/`.
-
-## Sections
-
-1. **Hero** — Cinematic full-bleed with layered typography, parallax, marquee
-2. **About Me** — Two-column editorial layout with skills timeline
-3. **Projects** — Bento grid glassmorphism cards (TripMate, Fire Ends Here, SoundWave)
-4. **Experience & Certifications** — Tutoring experience + cert cards
-5. **Contact** — Frosted form + contact info with atmospheric background
-6. **Footer** — Minimal wordmark + nav + social
+A modern and immersive personal developer portfolio built using **Next.js 14, TypeScript, Tailwind CSS, and Framer Motion**.
+Designed with smooth animations, premium UI aesthetics, and a clean developer-focused experience.
 
 ---
 
-Built with intention. Designed at midnight. Ships real products.
+# 🚀 Overview
+
+This portfolio showcases:
+
+* 👨💻 Developer profile
+* 🛠 Skills & technologies
+* 💼 Projects showcase
+* 📱 Responsive design
+* ✨ Smooth animations
+* 🌙 Modern dark aesthetic
+* ⚡ High performance architecture
+
+Built to create a strong digital presence and represent development skills in a cinematic and professional way.
+
+---
+
+# ✨ Features
+
+* 🎬 Smooth page animations with Framer Motion
+* ⚡ Optimized performance using Next.js 14
+* 🎨 Fully responsive modern UI
+* 🌙 Premium dark theme
+* 🧠 Interactive sections and transitions
+* 📱 Mobile-friendly layout
+* 💻 Clean component-based architecture
+* 🚀 Fast loading and optimized rendering
+
+---
+
+# 🛠 Tech Stack
+
+| Technology    | Purpose          |
+| ------------- | ---------------- |
+| Next.js 14    | React Framework  |
+| TypeScript    | Type Safety      |
+| Tailwind CSS  | Styling          |
+| Framer Motion | Animations       |
+| Lucide React  | Icons            |
+| Lenis         | Smooth Scrolling |
+| React 18      | UI Library       |
+
+---
+
+# 📂 Project Structure
+
+```bash
+prathamesh-portfolio/
+│
+├── app/
+├── components/
+├── public/
+├── styles/
+├── package.json
+├── tailwind.config.ts
+├── next.config.js
+└── tsconfig.json
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone the repository
+
+```bash
+git clone <your-repo-link>
+```
+
+## 2️⃣ Navigate into the project
+
+```bash
+cd prathamesh-portfolio
+```
+
+## 3️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+## 4️⃣ Run development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🌐 Production Build
+
+```bash
+npm run build
+```
+
+```bash
+npm start
+```
+
+---
+
+# 📸 Portfolio Highlights
+
+* Clean modern interface
+* Developer-centric design
+* Smooth cinematic transitions
+* Interactive UI experience
+* Responsive across devices
+
+---
+
+# 👨💻 About Me
+
+Hi, I'm **Prathamesh** 👋
+A Computer Engineering student passionate about:
+
+* Frontend Development
+* UI/UX Design
+* Creative Web Experiences
+* React & Next.js Development
+* Building cinematic and interactive websites
+
+---
+
+# 📬 Contact
+
+Feel free to connect and collaborate 🚀
+
+* GitHub: `@praxxz`
+* Portfolio: `https://my-portfolio-psi-six-36.vercel.app/`
+
+---
+
+
+# 🔥 Inspiration
+
+Inspired by modern developer portfolios, cinematic interfaces, and immersive frontend experiences.
+
+---
+
+# 📜 License
+
+This project is open for learning, inspiration, and portfolio purposes.
+
+---
+
+# ⚡ Final Note
+
+> “Code. Create. Innovate. Repeat.”
+
+Built with creativity, passion, and late-night debugging sessions 💻🔥
